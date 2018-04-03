@@ -15,8 +15,6 @@ echo "Changing Permissions"
 sudo chown -R hpc:hpc /usr/local/hadoop
 echo "Configuring Installation"
 sudo echo "#HADOOP VARIABLES START" >> ~/.bashrc
-sudo echo "export JAVA_HOME=/usr" >> ~/.bashrc
-#sudo echo "export PATH=\$PATH:\$JAVA_HOME" >> ~/.bashrc
 sudo echo "export HADOOP_HOME=/usr/local/hadoop" >> ~/.bashrc
 sudo echo "export PATH=\$PATH:\$HADOOP_HOME/bin" >> ~/.bashrc
 sudo echo "export PATH=\$PATH:\$HADOOP_HOME/sbin" >> ~/.bashrc
