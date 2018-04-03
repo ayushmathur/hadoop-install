@@ -24,7 +24,7 @@ sudo echo "#HADOOP VARIABLES END" >> ~/.bashrc
 source ~/.bashrc
 echo "Installing XMLStarlet"
 sudo apt-get install xmlstarlet
-echo "Instal XMLStarlet Complete"
+echo "Install XMLStarlet Complete"
 xmlstarlet ed --inplace -s /configuration -t elem -n property -v "" -s /configuration/property -t elem -n name -v fs.defaultFS -s /configuration/property -t elem -n value -v hdfs://localhost:9000 $HADOOP_HOME/etc/hadoop/core-site.xml
 echo "core-site.xml configured"
 xmlstarlet ed --inplace -s /configuration -t elem -n property -v "" -s /configuration/property -t elem -n name -v dfs.replication -s /configuration/property -t elem -n value -v 1 $HADOOP_HOME/etc/hadoop/hdfs-site.xml
