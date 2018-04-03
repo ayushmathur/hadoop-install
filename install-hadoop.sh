@@ -12,7 +12,7 @@ sudo mkdir -p /usr/local/hadoop
 sudo mv ./hadoop-2.7.5/* /usr/local/hadoop
 echo "Move successful"
 echo "Changing Permissions"
-sudo chown -R hpc:hpc /usr/local/hadoop
+sudo chown -R $LOGNAME:$LOGNAME /usr/local/hadoop
 echo "Configuring Installation"
 sudo echo "#HADOOP VARIABLES START" >> ~/.bashrc
 sudo echo "export HADOOP_HOME=/usr/local/hadoop" >> ~/.bashrc
@@ -23,9 +23,9 @@ source ~/.bashrc
 echo "Installing XMLStarlet"
 sudo apt-get install xmlstarlet
 echo "Install XMLStarlet Complete"
-xmlstarlet ed --inplace -s /configuration -t elem -n property -v "" -s /configuration/property -t elem -n name -v fs.defaultFS -s /configuration/property -t elem -n value -v hdfs://localhost:9000 $HADOOP_HOME/etc/hadoop/core-site.xml
+xmlstarlet ed --inplace -s /configuration -t elem -n property -v "" -s /configuration/property -t elem -n name -v fs.defaultFS -s /configuration/property -t elem -n value -v hdfs://localhost:9000 /usr/local/hadoop/etc/hadoop/core-site.xml
 echo "core-site.xml configured"
-xmlstarlet ed --inplace -s /configuration -t elem -n property -v "" -s /configuration/property -t elem -n name -v dfs.replication -s /configuration/property -t elem -n value -v 1 $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+xmlstarlet ed --inplace -s /configuration -t elem -n property -v "" -s /configuration/property -t elem -n name -v dfs.replication -s /configuration/property -t elem -n value -v 1 /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 echo "hdfs-site.xml configured"
 echo "Configuration complete"
 echo "Install complete"
