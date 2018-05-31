@@ -2,7 +2,7 @@
 umask 0022
 echo "Umask is set to 0022"
 echo "Acquiring packages to install"
-wget -c http://www-us.apache.org/dist/hadoop/common/hadoop-2.7.5/hadoop-2.7.5.tar.gz
+wget -c http://www-us.apache.org/dist/hadoop/common/hadoop-2.7.6/hadoop-2.7.6.tar.gz
 echo "Packages acquired successfully"
 echo "Extracting the package"
 tar  xzf hadoop-2.7.5.tar.gz
